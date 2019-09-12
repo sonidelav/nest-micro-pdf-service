@@ -15,12 +15,11 @@ describe('PDF Module', () => {
         await app.init();
     })
 
-    it('/POST pdf/render-url', () => {
+    it('/POST pdf/render-url without filename', () => {
         return request(app.getHttpServer())
             .post('/pdf/render-url')
             .send({
                 url: "https://www.google.gr",
-                filename: "google-test.pdf",
                 options: {
                     screen: false,
                     page: {
@@ -32,15 +31,36 @@ describe('PDF Module', () => {
                 }
             })
             .expect('Content-Type', /pdf/)
+            .expect('Content-Disposition', 'attachment; filename=result.pdf')
             .expect(201)
     })
 
-    it('/POST pdf/render-html', () => {
+    it('/POST pdf/render-url with filename', () => {
+        return request(app.getHttpServer())
+            .post('/pdf/render-url')
+            .send({
+                url: "https://www.google.gr",
+                filename: "test.pdf",
+                options: {
+                    screen: false,
+                    page: {
+                        format: "A4",
+                        landscape: false,
+                        height: null,
+                        width: null
+                    }
+                }
+            })
+            .expect('Content-Type', /pdf/)
+            .expect('Content-Disposition', 'attachment; filename=test.pdf')
+            .expect(201)
+    })
+
+    it('/POST pdf/render-html without filename', () => {
         return request(app.getHttpServer())
             .post('/pdf/render-html')
             .send({
                 html: "<h1>HELLO WORLD</h1>",
-                filename: "google-test.pdf",
                 options: {
                     screen: false,
                     page: {
@@ -52,6 +72,28 @@ describe('PDF Module', () => {
                 }
             })
             .expect('Content-Type', /pdf/)
+            .expect('Content-Disposition', 'attachment; filename=result.pdf')
+            .expect(201)
+    })
+
+    it('/POST pdf/render-html with filename', () => {
+        return request(app.getHttpServer())
+            .post('/pdf/render-html')
+            .send({
+                html: "<h1>HELLO WORLD</h1>",
+                filename: 'test.pdf',
+                options: {
+                    screen: false,
+                    page: {
+                        format: "A4",
+                        landscape: false,
+                        height: null,
+                        width: null
+                    }
+                }
+            })
+            .expect('Content-Type', /pdf/)
+            .expect('Content-Disposition', 'attachment; filename=test.pdf')
             .expect(201)
     })
 
