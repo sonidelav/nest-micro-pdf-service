@@ -7,13 +7,13 @@
 
 Is a HTML 2 PDF service powered by NestJS and Puppeteer (Headless Chrome)
 
-# Installation
+## Installation
 
 ```bash
 $ npm install
 ```
 
-# Running the app
+## Running the app
 
 ```bash
 # development
@@ -26,7 +26,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-# Test
+## Test
 
 ```bash
 # unit tests
@@ -39,9 +39,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-# Usage
+## Usage
 
-## URL 2 PDF
+### URL 2 PDF
 
 ```http
 POST http://localhost:3000//pdf/render-url
@@ -63,7 +63,7 @@ POST http://localhost:3000//pdf/render-url
 }
 ```
 
-## HTML 2 PDF
+### HTML 2 PDF
 
 ```http
 POST http://localhost:3000//pdf/render-html
