@@ -31,7 +31,7 @@ export class PdfService {
         this.logger.log(`Navigate to ${url}...`)
         await page.goto(url)
 
-        if(options) {
+        if (options) {
             await page.emulateMedia(options.screen ? 'screen' : 'print')
         }
 
@@ -58,7 +58,7 @@ export class PdfService {
         this.logger.log(`Load HTML...`)
         await page.setContent(html, { waitUntil: 'domcontentloaded', timeout: 0 })
 
-        if(options) {
+        if (options) {
             await page.emulateMedia(options.screen ? 'screen' : 'print')
         }
 

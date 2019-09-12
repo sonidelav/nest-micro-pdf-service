@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>PDF Service - Front Dashboard</title>
+  </head>
+  <body>
+    <div id="app" style="padding-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="page-header">PDF Front Tester</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <textarea v-model="htmlContent" rows="10" class="form-control" placeholder="Enter HTML..."></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-block" @click="htmlToPdf">Html To PDF</button>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px">
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" v-model="url" placeholder="Enter a Url.... ie. http://example.com"></input>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-block" @click="urlToPdf">Url To PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

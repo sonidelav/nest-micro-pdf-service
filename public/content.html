@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <ul>
+            <li v-for="(item, i) in items" :key="i">
+                Name: {{ item.name }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data: () => ({
+            title: 'HELLO WORLD',
+            items: [
+                {name: 'one'},
+                {name: 'two'},
+                {name: 'three'},
+                {name: 'four'},
+                {name: 'five'},
+            ]
+        })
+    })
+    </script>
+  </body>
+</html>
