@@ -45,7 +45,7 @@ $ npm run test:cov
 ### URL 2 PDF
 
 ```http
-POST http://localhost:3000//pdf/render-url
+POST http://localhost:3000/pdf/render-url
 ```
 ```js
 {
@@ -67,7 +67,7 @@ POST http://localhost:3000//pdf/render-url
 ### HTML 2 PDF
 
 ```http
-POST http://localhost:3000//pdf/render-html
+POST http://localhost:3000/pdf/render-html
 ```
 
 ```js
