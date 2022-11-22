@@ -11,33 +11,33 @@ Is a HTML 2 PDF service powered by NestJS and Puppeteer (Headless Chrome)
 ## Installation
 
 ```bash
-$ npm install
+yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+yarn start
 
 # watch mode
-$ npm run start:dev
+yarn start:dev
 
 # production mode
-$ npm run start:prod
+yarn start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+yarn test
 
 # e2e tests
-$ npm run test:e2e
+yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+yarn test:cov
 ```
 
 ## Usage
@@ -47,6 +47,7 @@ $ npm run test:cov
 ```http
 POST http://localhost:3000/pdf/render-url
 ```
+
 ```js
 {
     "url": "https://www.google.gr",       // Url to navigate and print to pdf.
